@@ -32,4 +32,6 @@ You can override colors, by overriding the root variables:
 
 See the example files for more usage examples.
 
+Pho-ui does not provide any layout classes or help. I suggest you read up on how to use [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) and [CSS Flex Box](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) instead.
+
 ![screen shot](img/phoui.png)
