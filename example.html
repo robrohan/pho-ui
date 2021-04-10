@@ -24,10 +24,17 @@
     <script>
       function init() {
         const p1 = document.querySelector("#progress1");
+        const pval = document.querySelector("#progressval");
         let p1v = 0;
         setInterval(() => {
           p1.value = p1v++ % 100;
+          pval.innerHTML = p1.value + "%";
         }, 100);
+      }
+
+      function rangeChange(e) {
+        const r1 = document.querySelector("#rangeval");
+        r1.innerHTML = e.value;
       }
     </script>
   </head>
@@ -90,8 +97,29 @@
     </div>
 
     <div class="control">
-      <label for="text3">Range</label>
-      <input type="range" id="text3" />
+      <label for="select1">Multi-Select</label>
+      <select multiple>
+        <optgroup label="OptGroup1">
+          <option name="opt1">Option 1</option>
+          <option name="opt2">Option 2</option>
+        </optgroup>
+        <optgroup label="OptGroup2">
+          <option name="opt3">Option 3</option>
+          <option name="opt4">Option 4</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="control">
+      <label for="text3">Range <span id="rangeval"></span></label>
+      <input
+        type="range"
+        id="text3"
+        min="0"
+        max="1"
+        step=".01"
+        onchange="rangeChange(this)"
+      />
     </div>
 
     <div class="control">
@@ -135,7 +163,7 @@
     <!-- newish HTML stuff -->
 
     <div class="control">
-      <label>Progress</label>
+      <label>Progress <span id="progressval"></span></label>
       <progress id="progress1" min="0" max="100" value="45"></progress>
     </div>
 
