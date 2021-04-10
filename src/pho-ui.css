@@ -8,16 +8,16 @@
   --control-size: var(--font-size);
 
   /* something you can change */
-  --color-control: rgba(0, 0, 0, 0.8);
+  --color-control: rgba(7, 59, 76, 1);
   /* the control is turned on */
-  --color-active: rgba(121, 56, 228, 0.4);
+  --color-active: rgba(239, 71, 111, 1);
   /* for backgrounds of thing, like the range slider
     and toggle switch */
   --color-subdue: hsl(244, 2%, 63%);
   --color-subdue-on: hsl(244, 2%, 89%);
 
   /* a11y focus - don't be mean. */
-  --select-focus: rgba(21, 156, 228, 0.4);
+  --select-focus: rgba(255, 209, 102, 0.8);
   --focus-border: 0.1625rem;
   --focus-time: 0.1s;
 
