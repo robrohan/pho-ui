@@ -1,0 +1,319 @@
+:root {
+  --main-font: Helvetica, sans-serif;
+  /** font size for pretty much everything */
+  --font-size: 1rem;
+  /** used for things like the range handler and
+    checkbox control size. Often should be the same as
+    font-size */
+  --control-size: var(--font-size);
+
+  /* something you can change */
+  --color-control: rgba(0, 0, 0, 0.8);
+  /* the control is turned on */
+  --color-active: rgba(121, 56, 228, 0.4);
+  /* for backgrounds of thing, like the range slider
+    and toggle switch */
+  --color-subdue: hsl(244, 2%, 63%);
+  --color-subdue-on: hsl(244, 2%, 89%);
+
+  /* a11y focus - don't be mean. */
+  --select-focus: rgba(21, 156, 228, 0.4);
+  --focus-border: 0.1625rem;
+  --focus-time: 0.1s;
+
+  /* control animation times */
+  --switch-time: 0.2s;
+  --radio-fade-time: 0.2s;
+}
+
+/* //////////////////////////////////////////////// */
+
+input,
+label,
+textarea,
+select,
+audio,
+video,
+button,
+progress {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+}
+
+label {
+  display: block;
+}
+
+*:focus {
+  /* change for a11y */
+  outline: none; /* thin dotted; */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+textarea,
+select,
+button {
+  border: 0.125rem solid var(--color-subdue-on);
+  padding: 0 calc(var(--font-size) * 0.5) 0 calc(var(--font-size) * 0.5);
+  font-size: var(--font-size);
+  min-height: calc(var(--font-size) * 2);
+  vertical-align: middle;
+  min-width: calc(var(--font-size) * 6);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="datetime-local"]:focus,
+input[type="datetime"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="file"]:focus,
+input[type="range"]:focus,
+textarea:focus,
+button:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-border) var(--select-focus);
+  transition: box-shadow var(--focus-time) ease-out;
+}
+
+button,
+input[type="submit"],
+input[type="file"] {
+  cursor: pointer;
+  min-height: calc(var(--control-size) * 2);
+  min-width: calc(var(--control-size) * 6);
+}
+
+fieldset {
+  border: 0.125rem solid var(--color-subdue-on);
+  padding: calc(var(--font-size) * 0.5);
+}
+
+/* //////////////////////////// */
+/* Select ///////////////////// */
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  vertical-align: middle;
+}
+
+select {
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) * 2);
+  min-width: calc(var(--font-size) * 15);
+  border: 0.125rem solid var(--color-subdue-on);
+  padding: 0 0 0 0.5rem;
+  cursor: pointer;
+
+  background-image: linear-gradient(
+    to left,
+    var(--color-control) var(--control-size),
+    transparent 2%
+  );
+}
+
+/* //////////////////////////// */
+/* Range ////////////////////// */
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: var(--font-size);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: var(--control-size);
+  height: var(--control-size);
+  border-radius: 0;
+  border: 0;
+  background-color: var(--color-control);
+}
+
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  -moz-appearance: none;
+  width: var(--control-size);
+  height: var(--control-size);
+  border-radius: 0;
+  border: 0;
+  background-color: var(--color-control);
+}
+
+/* input[type="range"]::-ms-thumb {
+  -moz-appearance: none;
+} */
+
+input[type="range"]::-moz-range-track {
+  background: var(--color-subdue-on);
+  height: var(--control-size);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--color-subdue-on);
+  height: var(--control-size);
+}
+
+/* //////////////////////////// */
+/* Progress /////////////////// */
+progress {
+  background-color: var(--color-subdue-on);
+  width: 100%;
+  height: var(--control-size);
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--color-subdue-on);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--color-active);
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--color-active);
+}
+
+/* //////////////////////////// */
+/* Checkbox /////////////////// */
+
+input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+  top: 0.125rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: var(--control-size);
+  width: var(--control-size);
+  border: 0.125rem solid var(--color-subdue-on);
+  border-radius: 0.125rem;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-active);
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+}
+
+/* //////////////////////////// */
+/* Switch /////////////////// */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: calc(var(--control-size) * 2);
+  height: var(--control-size);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-subdue);
+  -webkit-transition: var(--switch-time);
+  transition: var(--switch-time);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--control-size);
+  width: var(--control-size);
+  background-color: var(--color-control);
+  -webkit-transition: var(--switch-time);
+  transition: var(--switch-time);
+}
+
+input[type="checkbox"]:checked + .slider {
+  background-color: var(--color-active);
+}
+
+input[type="checkbox"]:focus + .slider {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-border) var(--select-focus);
+  transition: box-shadow var(--focus-time) ease-out;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+  -webkit-transform: translateX(var(--control-size));
+  -ms-transform: translateX(var(--control-size));
+  transform: translateX(var(--control-size));
+}
+
+/* //////////////////////////// */
+/* Radio ////////////////////// */
+
+input[type="radio"] {
+  appearance: none;
+  position: relative;
+  top: 0.125rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: var(--control-size);
+  width: var(--control-size);
+  border: 0.125rem solid var(--color-subdue-on);
+  border-radius: 0.625rem;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--color-active);
+}
+
+input[type="radio"] + label {
+  display: inline-block;
+}
+
+/* //////////////////////////// */
+/* Media ////////////////////// */
+
+audio {
+  height: calc(var(--control-size) * 2);
+  width: 100%;
+  border-radius: 0;
+}
+video {
+  height: calc(var(--control-size) * 6);
+  width: 100%;
+}
