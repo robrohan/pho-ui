@@ -30,4 +30,6 @@ You can override colors, by overriding the root variables:
 }
 ```
 
-See the examples.
+See the example files for more usage examples.
+
+![screen shot](img/phoui.png)
