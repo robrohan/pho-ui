@@ -24,12 +24,9 @@
     <script>
       function init() {
         const p1 = document.querySelector("#progress1");
-        // const m1 = document.querySelector("#meter1");
         let p1v = 0;
         setInterval(() => {
-          p1.value = p1v % 100;
-          // m1.value = (p1v % 100) / 100;
-          p1v++;
+          p1.value = p1v++ % 100;
         }, 100);
       }
     </script>

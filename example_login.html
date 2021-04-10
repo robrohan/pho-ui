@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="src/pho-ui.css" />
+    <style>
+      :root {
+        --main-font: "courier";
+        --select-focus: black;
+        --color-control: silver;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .control {
+        margin: 1rem 0 1rem 0;
+        width: 100%;
+      }
+      label {
+        font-weight: bold;
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 100vh;
+      }
+      .login-box {
+        border: 1rem solid black;
+        border-radius: 2rem;
+        align-self: center;
+        padding: 3rem;
+        box-shadow: 5px 5px 5px silver;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">
+      <div class="login-box">
+        <form method="GET" action="">
+          <div class="control">
+            <label for="text1">Email</label>
+            <input type="email" id="text1" />
+          </div>
+
+          <div class="control">
+            <label for="text1">Password</label>
+            <input type="password" id="text1" />
+          </div>
+
+          <div class="control">
+            <label for="select1">Role</label>
+            <select>
+              <option name="opt1">Admin</option>
+              <option name="opt2">User</option>
+              <option name="opt2">Root</option>
+            </select>
+          </div>
+
+          <div class="control">
+            <input type="submit" value="Login" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
