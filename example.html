@@ -34,6 +34,10 @@
         const r1 = document.querySelector("#rangeval");
         r1.innerHTML = e.value;
       }
+      function rangeChange2(e) {
+        const r1 = document.querySelector("#rangeval2");
+        r1.innerHTML = e.value;
+      }
     </script>
   </head>
 
@@ -118,6 +122,37 @@
         step=".01"
         onchange="rangeChange(this)"
       />
+    </div>
+
+    <div class="control">
+      <label for="text4">Range <span id="rangeval2"></span></label>
+      <div>
+        <input
+          type="range"
+          orient="vertical"
+          id="text4"
+          min="0"
+          max="1"
+          step=".01"
+          onchange="rangeChange2(this)"
+        />
+        <input
+          type="range"
+          orient="vertical"
+          id="text4a"
+          min="0"
+          max="1"
+          step=".01"
+        />
+        <input
+          type="range"
+          orient="vertical"
+          id="text4b"
+          min="0"
+          max="1"
+          step=".01"
+        />
+      </div>
     </div>
 
     <div class="control">
